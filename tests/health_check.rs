@@ -1,7 +1,7 @@
 //! tests/health_check.rs
 
 use std::net::TcpListener;
-use zero2prod::run;
+use zero2prod::startup::run;
 
 /// Spin up an instance of our application
 /// and returns its address (i.e. http://localhost:XXXX)
@@ -27,7 +27,7 @@ async fn health_check_works() {
     // Act
     let response = client
         // Use the returned application address
-        .get(&format!("{}/health-check", &address))
+        .get(&format!("{}/health_check", &address))
         .send()
         .await
         .expect("Failed to execute request.");
