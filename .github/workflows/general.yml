@@ -6,11 +6,11 @@ on:
   # this specific branch (a.k.a. book chapter).
   push:
     branches:
-      - root-chapter-05
+      - master
   pull_request:
     types: [ opened, synchronize, reopened ]
     branches:
-      - root-chapter-05
+      - master
 
 env:
   CARGO_TERM_COLOR: always
@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     services:
       postgres:
-        image: postgres:12
+        image: postgres:13
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: password
