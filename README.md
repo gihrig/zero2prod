@@ -14,6 +14,7 @@ You'll need to install:
 
 - [Rust](https://www.rust-lang.org/tools/install)
 - [Docker](https://docs.docker.com/get-docker/)
+- [DigitalOcean Doctl](https://docs.digitalocean.com/reference/doctl/how-to/install/)
 
 Launch a (migrated) Postgres database via Docker:
 
@@ -23,24 +24,33 @@ Launch a (migrated) Postgres database via Docker:
 
 ## How to build
 
-Using `cargo`:
-
 ```bash
 cargo build
 ```
 
 ## How to test
 
-Using `cargo`:
-
 ```bash
 cargo test
+```
+
+## How to run
+
+```bash
+cargo run
+```
+In separate terminal
+
+```bash
+curl -v http://127.0.0.1:8000/health_check
+or
+curl -v POST --data 'name=le%20guin&email=ursula_le_guin%40gmail.com' 127.0.0.1:8000/subscriptions
 ```
 
 ## Build Docker container
 
 ```bash
-build --tag zero2prod --file Dockerfile .
+docker build --tag zero2prod --file Dockerfile .
 ```
 
 ## Run in Docker container
