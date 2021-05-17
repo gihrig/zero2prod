@@ -34,5 +34,23 @@ cargo build
 Using `cargo`:
 
 ```bash
-cargo test 
+cargo test
+```
+
+## Build Docker container
+
+```bash
+build --tag zero2prod --file Dockerfile .
+```
+
+## Run in Docker container
+
+```bash
+docker run -p 8000:8000 zero2prod
+```
+
+## Show Docker image build size
+
+```bash
+docker images zero2prod
 ```
