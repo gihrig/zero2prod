@@ -54,3 +54,9 @@ docker run -p 8000:8000 zero2prod
 ```bash
 docker images zero2prod
 ```
+
+## Create app at DigitalOcean
+
+```bash
+doctl apps create --spec spec.yaml
+```
